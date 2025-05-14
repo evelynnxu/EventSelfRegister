@@ -1,0 +1,12 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Local browser profiles and session
+chrome_profile_*/
+partiful_profile/
+partiful_login_state.json
+
+# OS metadata files
+.DS_Store
+Thumbs.db
