@@ -100,6 +100,8 @@ async def login_and_process():
 
             except Exception as e:
                 print(f"❌ Error while processing: {e}")
+        
+        print("\n🎉 All events processed! RSVP automation is complete.")
 
         await context.close()
 

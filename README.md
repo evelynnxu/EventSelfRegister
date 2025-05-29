@@ -22,7 +22,8 @@ You can either use Git, or just download the ZIP and unzip it anywhere on your c
 
 # Step 2: Make sure all the dependencies installed
 This script uses Python, so make sure you have Python 3.10 or higher installed.
-Then install required packages with:
+
+Once you're in the project folder, open a terminal and run:
 
 ```bash
 pip install -r requirements.txt
@@ -68,13 +69,18 @@ If a question asks about email, company, title, or LinkedIn, always use exactly 
 
 # Step 4: Run autofill
 
+
 ```bash
 python Autofill_Partiful_Playwright.py
 ```
 ---
 
-Then follow the instruction in the terminal. Once you run "Autofill_Partiful_Playwright.py", it will automatically pop up a chrome window of partiful website. You should then log in by yourself through SMS verification and then back to the terminal to press enter. After that, the program will start to RSVP for you automatically, and you should wait until all the over 1000 events were signed up. 
+Then follow the instruction in the terminal. Once you run "Autofill_Partiful_Playwright.py", it will automatically pop up a chrome window of partiful website. 
 
-Reminder: You will not receive email after registering for the event. You will only receive SMS notifications or emails after the event host approve your attendence. 
+The script needs you to log in to your own Partiful account once, so it can use your session for registration. Once you have logged in, back to the terminal to press enter. 
 
-DM me(Yining) if you have any trouble using this tool on Slack!
+After that, the program will start to RSVP for you automatically, and you should wait until the terminal shows "All events processed! RSVP automation is complete". 
+
+Reminder: You will not receive email after registering for the events. You will only receive SMS notifications or emails after the event host approve your attendence. 
+
+Feel free to DM me(Yining) if you have any trouble using this tool on Slack!
