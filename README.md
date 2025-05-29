@@ -70,6 +70,7 @@ If a question asks about email, company, title, or LinkedIn, always use exactly 
 
 ```bash
 python Autofill_Partiful_Playwright.py
+```
 ---
 
 Then follow the instruction in the terminal. Once you run "Autofill_Partiful_Playwright.py", it will automatically pop up a chrome window of partiful website. You should then log in by yourself through SMS verification and then back to the terminal to press enter. After that, the program will start to RSVP for you automatically, and you should wait until all the over 1000 events were signed up. 
