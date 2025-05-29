@@ -14,49 +14,15 @@ This project builds an automated RSVP agent that scrapes upcoming NYC Tech Week 
 
 ---
 
-## 📁 Project Structure
 
-```
-.
-├── WebScraper.py                  # Scrapes Tech Week event data
-├── tech_week_events.csv           # Output of the scraper (can be filtered manually)
-├── Autofill_Partiful_Playwright.py # Automates RSVP process using Playwright
-├── openai_helper.py               # GPT-based answer generation
-├── partiful_profile/              # Local Chrome profile (excluded via .gitignore)
-└── test_tech_week_events.csv      # Optional sample file for testing automation
-```
+## ✅ How to use
 
----
+# Step 1: Clone the GitHub repo
+You can either use Git, or just download the ZIP and unzip it anywhere on your computer.
 
-## 🧠 How it Works
-
-1. **Data Collection**
-   - Run `WebScraper.py` to collect all upcoming NYC Tech Week events and export them to `tech_week_events.csv`.
-
-2. **RSVP Automation**
-   - Run `Autofill_Partiful_Playwright.py`. It:
-     - Opens Chrome via Playwright.
-     - Prompts you to log in to Partiful once.
-     - Visits each event link and clicks "Get on the list" / "Going".
-     - Extracts host questions from the RSVP form.
-     - Calls OpenAI to generate appropriate responses.
-     - Fills and submits the form automatically.
-
----
-
-## 🔐 OpenAI API Key
-
-The GPT-powered module requires an OpenAI API key. You must manually add your key in `openai_helper.py`:
-
-```python
-client = openai.OpenAI(api_key="YOUR_API_KEY_HERE")
-```
-
----
-
-## 📦 Dependencies
-
-Install required packages with:
+# Step 2: Make sure all the dependencies installed
+This script uses Python, so make sure you have Python 3.10 or higher installed.
+Then install required packages with:
 
 ```bash
 pip install -r requirements.txt
@@ -68,7 +34,6 @@ Sample `requirements.txt`:
 playwright
 openai
 pandas
-requests
 ```
 
 After installing Playwright, run:
@@ -76,29 +41,39 @@ After installing Playwright, run:
 ```bash
 playwright install
 ```
+# Step 3: Change/add information in openai_helper.py
 
----
+The GPT-powered module requires an OpenAI API key. You must manually add your key in `openai_helper.py`:
 
-## ✅ Example Usage
+```python
+client = openai.OpenAI(api_key="YOUR_API_KEY_HERE")
+```
+DM me if you don't have a openai api key and I can share mine.
 
-```bash
-# Step 1: Scrape events
-python WebScraper.py
+Then enter your own information about RSVP replace the original "Natan" one in `openai_helper.py`:
 
-# Step 2: Run autofill
-python Autofill_Partiful_Playwright.py
+```python
+def generate_answers_with_gpt(question_labels):
+    identity = """
+You are helping fill out RSVP forms for events. Use the following information to answer:
+
+- Name: Natan Vidra
+- Email: vidranatan@gmail.com
+- Company: Anote
+- Job Title: CEO
+- LinkedIn: https://www.linkedin.com/in/natanvidra/
+
+If a question asks about email, company, title, or LinkedIn, always use exactly the values above.
 ```
 
+# Step 4: Run autofill
+
+```
+python Autofill_Partiful_Playwright.py
 ---
 
-## 📄 License
+Then follow the instruction in the terminal. Once you run "Autofill_Partiful_Playwright.py", it will automatically pop up a chrome window of partiful website. You should then log in by yourself through SMS verification and then back to the terminal to press enter. After that, the program will start to RSVP for you automatically, and you should wait until all the over 1000 events were signed up. 
 
-MIT License — use at your own risk and comply with third-party platform terms.
+Reminder: You will not receive email after registering for the event. You will only receive SMS notifications or emails after the event host approve your attendence. 
 
----
-
-## 🤝 Acknowledgments
-
-- [Partiful](https://partiful.com) for event RSVP infrastructure
-- [Tech Week](https://www.tech-week.com) for open event data
-- [OpenAI](https://platform.openai.com) for language model API
+DM me(Yining) if you have any trouble using this tool on Slack!

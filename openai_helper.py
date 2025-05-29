@@ -9,11 +9,11 @@ def generate_answers_with_gpt(question_labels):
     identity = """
 You are helping fill out RSVP forms for events. Use the following information to answer:
 
-- Name: Natan Vidra
-- Email: nvidra@anote.ai
+- Name: YOUR_NAME_HERE
+- Email: YOUR_EMAIL_HERE
 - Company: Anote
-- Job Title: CEO
-- LinkedIn: https://www.linkedin.com/in/natanvidra/
+- Job Title: YOUR_TITLE_HERE
+- LinkedIn: YOUR_LINKEDIN_HERE
 
 If a question asks about email, company, title, or LinkedIn, always use exactly the values above.
 

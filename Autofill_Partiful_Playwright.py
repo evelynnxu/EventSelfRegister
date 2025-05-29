@@ -4,7 +4,7 @@ import pandas as pd
 from playwright.async_api import async_playwright
 from openai_helper import generate_answers_with_gpt
 
-CSV_PATH = "test_tech_week_events.csv"
+CSV_PATH = "tech_week_events.csv"
 PROFILE_PATH = "partiful_profile"
 
 # Step 1: Open the browser and let users to self-login
