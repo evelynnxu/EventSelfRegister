@@ -50,7 +50,7 @@ client = openai.OpenAI(api_key="YOUR_API_KEY_HERE")
 ```
 DM me if you don't have a openai api key and I can share mine.
 
-Then enter your own information about RSVP replace the original "Natan" one in `openai_helper.py`:
+Then enter your own information which will be used to fill in the RSVP form in `openai_helper.py`:
 
 ```python
 def generate_answers_with_gpt(question_labels):
